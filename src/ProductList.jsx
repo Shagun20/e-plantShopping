@@ -238,6 +238,10 @@ function ProductList({ onHomeClick }) {
         textDecoration: 'none',
     }
 
+    const calculateTotalQuantity = () => {
+        return CartItems ? CartItems.reduce((total, item) => total + item.quantity, 0) : 0;
+         };
+         
     const handleAddToCart = (product) => {
         dispatch(addItem(product)); // Dispatch the action to add the product to the cart (Redux action)
       
@@ -261,6 +265,10 @@ function ProductList({ onHomeClick }) {
         setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
         setShowCart(false); // Hide the cart when navigating to About Us
     };
+
+    const handleCheckoutShopping = (e) => {
+        alert('Functionality to be added for future reference');
+      };
 
     const handleContinueShopping = (e) => {
         e.preventDefault();
